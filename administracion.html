@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion</title>
+    <link rel="stylesheet" href="/css/administracion.css">
+</head>
+<body>
+
+    <div id="sideNavigation" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="#" class="desactivado">Seccion 2</a>
+        <a href="#" class="desactivado">Seccion 3</a>
+      </div>
+       
+
+      
+      <nav class="topnav">
+        <a href="#" onclick="openNav()">
+          <svg width="30" height="30" id="icoOpen">
+              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+          </svg>
+        </a>
+        <a href="index.html">Salir </a>
+      </nav>
+       
+      <div id="main">
+        <h1> Hola mundo </h1>
+      </div>
+
+
+      <!-- Script para abrir y cerrar el menu de opciones-->
+      <script>
+        function openNav() {
+            document.getElementById("sideNavigation").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+         
+        function closeNav() {
+            document.getElementById("sideNavigation").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        </script>
+</body>
+</html>
