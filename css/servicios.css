@@ -1,29 +1,41 @@
-header{
+body {
+    margin :0
+}
+
+header > img {
+    max-height: 10vh;
+    object-fit: cover;
+}
+
+header {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-    background: #fff;
     border-radius: 20px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+
 }
 
 li, a {
     font-weight: 500;
     font-size: 16px;
-    color: black;
+    color: #000000;
     text-decoration: none;
 }
 
 .logo{
-    width: 250px;
     cursor: pointer;
-    margin-right: auto;
 }
 
 .nav_enlaces {
     list-style:none;
+    padding: 0;
+    margin: 0;
+    display: flex ;
+    flex-wrap: wrap;
 }
 
 .nav_enlaces li {
@@ -44,84 +56,190 @@ li, a {
     color:#fff;
 }
 
-
 .banner {
-    height: 400px;
-    width: auto;
-    background: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 35vh;
 }
 
-/* Comienza a aplicar estas propiedades cuando llega al 680px +  */
-@media (min-width: 680px) {
-    .servicios {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        height: 500px;
-    }
-
-    section{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        height: 300px;
-    }
-
+.banner-imagen {
+    position: absolute;
+    top: -15%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-2;
 }
 
-
-/* Cuando sea mayor a 680px se mostrara esto. */
-
-
-.texto {
-    text-align: center;
+.banner-imagen > img {
+    object-fit: cover;
+    width: 100%;
 }
-section img {
-    height: 300px;
-    width: auto;
+
+.banner::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    opacity: .4;
+    z-index: -1;
 }
+
+.banner * {
+    display: inline-block;
+}
+
+.banner h2 {
+    font-size: xxx-large;
+}
+
+main h2 {
+    margin: 1rem 0;
+}
+
+main p {
+    margin-bottom: 1rem;
+}
+
+main a {
+    max-width: fit-content;
+}
+
 
 .btn-consulta{
     background-image: linear-gradient(to right, #3FA535 , #475F51);
     border-radius: 10px;
-    color:#fff;
     padding: 15px;
     text-decoration: none;
-  }
-
-
-.mantenimiento {
-    text-align: center;
 }
 
-.tarjetasElectronicas{
-    text-align: center;
+
+svg {
+    height: 20px;
+    width: 20px;
 }
 
-.consultarServicio{
-    text-align: center;
-}
-footer{
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: 4fr 1fr 1fr;
-    color: #1C1C1C;
+.background-gris {
+    background-color: #F4F2F3;
 }
 
-footer img{
-  width: 40%;
-  margin-left: 80px;
-  margin-top: 20px;
+.background-blanco {
+    background-color: #FFFFFF;
 }
 
-footer h3 {
-    margin-bottom: 0px;
+.texto-blanco {
+    color: #FFFFFF
 }
 
-footer li{
-   list-style: none;
-   color: #3FA535;
-   margin-bottom: 5px;
-   margin-left: 2px;
+/* Aqui inician los estilos de esta pagina */
+
+
+@media screen and (max-width: 600px) {
+    /* Cuando sea menor de 600 px tendra este acomodo */
+    /* Direccion  */
+    .direcciones-parent, header , footer {
+        flex-direction: column ;
+    }
+
+    header > img {
+        width: 100%;
+    }
+
 }
 
+@media screen and ( min-width: 600px ) {
+
+    /* Direcciones  */
+    .direcciones-parent, header, footer {
+        flex-direction: row;
+    }
+
+    .servicios {
+        flex-direction: column;
+    }
+
+    header > img {
+        width: 30%;
+    }
+}
+
+@media screen and ( min-width: 1025px ) {
+
+    /* Direcciones */
+   .servicios {
+       flex-direction: row;
+   }
+
+}
+
+/* Mismos tamaños para todas las divs, inicio  */
+
+/* padres */
+.servicios , .panel , .columnas-de-algo {
+    display: flex;
+}
+
+
+/* hijos */
+.servicios > div , .panel > div, .columnas-de-algo > div  {
+    flex-basis: 0;
+    flex: 1 1 0px;
+}
+
+/* Mismos tamaños para todas las divs, fin  */
+
+/* Estilos propios de cada componente  */
+
+.servicios {
+    padding: 2rem 3rem;
+}
+
+.servicios > div {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.servicios > div > h2 {
+    font-size: xx-large;
+    border-radius: 40px;
+    box-shadow: 0 0 16px 8px #9f9f9f;
+}
+
+.servicios > div > * {
+    padding: 1rem;
+}
+
+.mantenimiento > h2 {
+    background: linear-gradient(to bottom, #253179, #18204F);
+}
+
+.tarjetas > h2 {
+    background: linear-gradient(to bottom, #EAC92E, #A08A20) ;
+}
+
+.consultas > h2 {
+    background: linear-gradient(to bottom, #B91516, #7F0F10);
+}
+
+/* panel */
+
+.panel > .panel-image > img {
+    width: 100%
+}
+.panel > .texto > h2 {
+    font-size: xxx-large;
+}
+
+.columnas-de-algo {
+    padding: 5rem;
+    justify-content: space-around;
+}

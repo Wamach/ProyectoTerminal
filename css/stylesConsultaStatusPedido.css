@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+  }
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      height: 100vh;
+    }
+  
+  
+  /*  que tipo de justifiy poner flex-end o space between*/
+  header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10%;
+      background: #fff;
+      border-radius: 20px;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+  }
+  
+  li, a {
+      font-weight: 500;
+      font-size: 16px;
+      color: black;
+      text-decoration: none;
+  }
+  
+  .logo{
+      width: 200px;
+      cursor: pointer;
+      margin-right: auto;
+  }
+  
+  .nav_enlaces {
+      list-style:none;
+  }
+  
+  .nav_enlaces li {
+      display:inline-block;
+      padding:10px 20px;
+  }
+  
+  .nav_enlaces li a {
+      transition: all 0.5s ease 0s;
+      padding: 10px;
+  }
+  
+  
+  .nav_enlaces li a:hover {
+      background-image: linear-gradient(to right, #3FA535 , #475F51);
+      background-size: 200%;
+      border-radius: 90px;
+      color:#fff;
+  }
+  
+    #contenedor {
+      text-align: left;
+      width: 100%;
+      margin: auto;
+     }
+     
+     #lateral {
+      width: 70%;  
+      height: 500px;
+      background-color: rgb(34, 33, 33); 
+      float:right; 
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      
+      padding-right: 50px;
+     }
+     
+     #principal {
+      width: 30%;
+      height: 500px;
+      float: left;
+      background: white;
+      text-align: center;
+     }
+
+     #principal h1{
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-left: 25px;
+     }
+
+     #principal h5{
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 25px;
+      color: gray;
+     }
+
+     .box-img{
+      margin-top: 150px;
+      margin-left: 150px;
+      width: 550px;
+      height: 300px;
+     
+      overflow: hidden;
+     }
+
+     .box-img img{
+      width: 100%;
+      height: auto;
+     } 
+  
+     label{
+      display: block; 
+      float: center;
+      margin-left: 25px;
+      margin-bottom: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+
+    
+    }
+  
+     input{
+      background-color: #fbfbfb; 
+      width: 230px; 
+      height: 40px; 
+      border-radius: 5px;  
+      border: 1px solid lightblue;    
+      margin-left: 25px;
+      margin-right: 25px;
+     
+    }   
+  
+    
+    button{
+      height: 45px; 
+      margin-left: 10%;
+      margin-top: auto;     
+      margin-bottom: 20px;        
+      text-transform: uppercase;
+      background-image: linear-gradient(to right, #3FA535 , #475F51);
+      border-style: solid; 
+      border-radius: 10px;  
+      width: 200px;   
+      cursor: pointer;
+    }  
+    
+   
+    button p{
+      color: #fff; 
+    }
+    
+    @media screen and (max-width: 600px) {
+      #lateral {
+        display: none;
+      }
+
+      #principal{
+        width: 100%;
+        margin-left: 30%;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      /* Cuando sea menor de 600 px tendra este acomodo */
+      /* Direccion  */
+      header {
+          flex-direction: column ;
+      }
+  
+      header > img {
+          width: 100%;
+      }
+    }
+
+    @media screen and ( min-width: 600px ) {
+
+      /* Direcciones  */
+       header{
+          flex-direction: row;
+      }
+      header > img {
+        width: 30%;
+    }
+
+}
+@media screen and ( min-width: 1025px ){
+  header > img {
+    max-height: 10vh;
+    object-fit: cover;
+  }
+header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+
+}
+}
+  
